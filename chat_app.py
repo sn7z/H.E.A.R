@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # Set your Groq API key
-groq_api_key = "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"
+groq_api_key = "Your api key"
 client = Groq(api_key=groq_api_key)
 
 # Initialize session storage (in a real app, you'd use a database)
