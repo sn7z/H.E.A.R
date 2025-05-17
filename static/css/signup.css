@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.container h2 {
+  margin-bottom: 1.5rem;
+  color: #2575fc;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Form Inputs */
+form input {
+  width: 100%;
+  padding: 0.85rem;
+  margin: 0.5rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #f7fafc;
+  transition: border 0.2s;
+}
+
+form input:focus {
+  border-color: #2575fc;
+  outline: none;
+  background: #e6f0fd;
+}
+
+/* Button */
+form button {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+
+/* Alert Messages */
+.alert {
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-size: 0.98rem;
+  text-align: left;
+}
+
+.alert.success {
+  background: #e6ffed;
+  color: #1e7e34;
+  border: 1px solid #b7ebc0;
+}
+
+.alert.danger {
+  background: #fff1f0;
+  color: #d93025;
+  border: 1px solid #ffb3b3;
+}
+
+.alert.warning {
+  background: #fffbe6;
+  color: #856404;
+  border: 1px solid #ffe58f;
+}
+
+/* Login Link */
+.container a {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: #2575fc;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+.container a:hover {
+  text-decoration: underline;
+  color: #6a11cb;
+}

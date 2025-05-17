@@ -1,0 +1,110 @@
+/* Hero section styles */
+.hero {
+    padding: var(--space-12) 0;
+    overflow: hidden;
+  }
+  
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-6);
+  }
+  
+  .dark-mode .hero-badge {
+    background-color: var(--color-primary-900);
+    color: var(--color-primary-300);
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    line-height: 1.5;
+  }
+  
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  
+  .security-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 280px;
+    color: var(--color-primary-500);
+    opacity: 0.9;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .hero .container {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .hero-content {
+      flex: 1;
+    }
+    
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero {
+      padding: var(--space-20) 0;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+    }
+  }

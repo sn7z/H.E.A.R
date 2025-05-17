@@ -1,0 +1,258 @@
+/* Base styles and CSS variables */
+:root {
+    /* Color variables - light mode */
+    --color-primary-50: #f0f9ff;
+    --color-primary-100: #e0f2fe;
+    --color-primary-200: #bae6fd;
+    --color-primary-300: #7dd3fc;
+    --color-primary-400: #38bdf8;
+    --color-primary-500: #0ea5e9;
+    --color-primary-600: #0284c7;
+    --color-primary-700: #0369a1;
+    --color-primary-800: #075985;
+    --color-primary-900: #0c4a6e;
+    --color-primary-950: #082f49;
+    
+    --color-accent-500: #ef4444;
+    --color-accent-600: #dc2626;
+    
+    --color-surface-50: #f8fafc;
+    --color-surface-100: #f1f5f9;
+    --color-surface-200: #e2e8f0;
+    --color-surface-300: #cbd5e1;
+    --color-surface-400: #94a3b8;
+    --color-surface-500: #64748b;
+    --color-surface-600: #475569;
+    --color-surface-700: #334155;
+    --color-surface-800: #1e293b;
+    --color-surface-900: #0f172a;
+    --color-surface-950: #020617;
+    
+    --color-success-500: #10b981;
+    --color-warning-500: #f59e0b;
+    --color-error-500: #ef4444;
+    
+    --color-bg: var(--color-surface-50);
+    --color-text: var(--color-surface-900);
+    --color-text-muted: var(--color-surface-500);
+    --color-border: var(--color-surface-200);
+    --color-shadow: rgba(0, 0, 0, 0.08);
+    
+    /* Spacing variables using 8px scale */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.25rem;  /* 20px */
+    --space-6: 1.5rem;   /* 24px */
+    --space-8: 2rem;     /* 32px */
+    --space-10: 2.5rem;  /* 40px */
+    --space-12: 3rem;    /* 48px */
+    --space-16: 4rem;    /* 64px */
+    --space-20: 5rem;    /* 80px */
+    --space-24: 6rem;    /* 96px */
+    
+    /* Typography */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    
+    /* Border radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 var(--color-shadow);
+    --shadow-md: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -2px var(--color-shadow);
+    --shadow-lg: 0 10px 15px -3px var(--color-shadow), 0 4px 6px -4px var(--color-shadow);
+    --shadow-xl: 0 20px 25px -5px var(--color-shadow), 0 8px 10px -6px var(--color-shadow);
+  }
+  
+  /* Dark mode color overrides */
+  .dark-mode {
+    --color-bg: var(--color-surface-900);
+    --color-text: var(--color-surface-50);
+    --color-text-muted: var(--color-surface-400);
+    --color-border: var(--color-surface-700);
+    --color-shadow: rgba(0, 0, 0, 0.25);
+    
+    color-scheme: dark;
+  }
+  
+  /* Reset and global styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: color var(--transition-normal), background-color var(--transition-normal);
+  }
+  
+  #page-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  img, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  button, input, select, textarea {
+    font: inherit;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 var(--space-4) 0;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  p {
+    margin: 0 0 var(--space-4) 0;
+  }
+  
+  a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  
+  a:hover {
+    color: var(--color-primary-700);
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .btn svg {
+    margin-left: var(--space-2);
+  }
+  
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: white;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: var(--color-primary-700);
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-surface-200);
+    color: var(--color-surface-900);
+  }
+  
+  .dark-mode .btn-secondary {
+    background-color: var(--color-surface-700);
+    color: var(--color-surface-50);
+  }
+  
+  .btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--color-surface-300);
+  }
+  
+  .dark-mode .btn-secondary:hover, .dark-mode .btn-secondary:focus {
+    background-color: var(--color-surface-600);
+  }
+  
+  /* Section styling */
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    text-align: center;
+  }
+  
+  .section-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto var(--space-8) auto;
+    text-align: center;
+  }
+  
+  /* Responsive breakpoints utility classes */
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 var(--space-6);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Focus styles for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }

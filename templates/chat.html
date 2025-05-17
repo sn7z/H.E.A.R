@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H.E.A.R Website with Chatbot</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/hero.css">
+  <link rel="stylesheet" href="/static/css/header.css">
+  <link rel="stylesheet" href="/static/css/bot.css">
+  <link rel="stylesheet" href="/static/css/footer.css">
+  <link rel="stylesheet" href="/static/css/login_credentials.css">
+  <link rel="icon" type="image/svg+xml" href="assets/shield-icon.svg">
+  <!-- Latest Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+            <a href="index.html">H.E.<span>A.R</span></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="/index" class="active">Home</a></li>
+            <li><a href="/report">Report</a></li>
+            <li><a href="/awareness">Awareness</a></li>
+            <li><a href="/templates/chat.html" id="chat-trigger">Chat Support</a></li>
+          </ul>
+          <div class="auth-buttons">
+            <a href="http://localhost:5173/login" class="nav-link" id="login-btn">Login</a>
+            <a href="http://localhost:5173/signup" class="nav-link" id="signup-btn">Sign Up</a>
+            
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+              <span>Advanced Protection</span>
+            </div>
+            <h1 class="hero-title">Secure your digital life with H.E.A.R</h1>
+            <p class="hero-description">
+              Our intelligent security assistant helps protect your data and privacy with real-time monitoring and expert guidance.
+            </p>
+            <div class="hero-actions">
+              <button id="chat-now-btn" class="btn btn-primary">
+                Chat with Security Assistant
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              <button class="btn btn-secondary">Learn More</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="security-illustration">
+              <svg width="280" height="280" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v4M12 16h.01"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chatbot-section" class="chatbot-section">
+        <div class="container">
+          <h2 class="section-title">Your Personal Security Assistant</h2>
+          <p class="section-description">
+            Get instant answers to your security questions and personalized guidance to keep your data safe.
+          </p>
+          
+          <div id="chatbot-container" class="chatbot-container">
+            <div class="chatbot-header">
+              <div class="chatbot-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+                <span>SAHELI AI</span>
+              </div>
+              <button id="chatbot-minimize" class="chatbot-minimize">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 15l-6-6-6 6"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <div class="chatbot-messages">
+              <!-- Messages will be added here by JavaScript -->
+            </div>
+            
+            <div class="chatbot-input">
+              <input type="text" id="chatbot-message-input" placeholder="Type your message..." aria-label="Type your message">
+              <button id="chatbot-send" class="chatbot-send" aria-label="Send message">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    
+    <div id="chat-fab" class="chat-fab">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path>
+      </svg>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <h3>H.E.A.R<span>H.E.A.R</span></h3>
+            <p>Providing support, resources, and a safe platform for incident reporting and assistance.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="report.html">Report an Incident</a></li>
+              <li><a href="awareness.html">Awareness</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-phone"></i> Emergency: 1-800-SAFE-NOW</p>
+            <p><i class="fas fa-envelope"></i> info@H.E.A.R.org</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Safety Avenue, Secure City, SC 12345</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 H.E.A.R. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/static/js/theme.js"></script>
+    <script src="/static/js/chatbot.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/chat_integration.js"></script>
+    <script src="/profile.js"></script>
+    <!-- <script src="/chat_integration.js"></script> -->
+    
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - SafeGuard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  
+  <!-- Make sure CSS is loaded -->
+  <style>
+    /* Fallback styles in case external CSS fails to load */
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; }
+    .container { max-width: 400px; margin: 80px auto; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login to SafeGuard</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="{{ url_for('signup') }}">Don't have an account? Sign Up</a>
+  </div>
+</body>
+</html>
